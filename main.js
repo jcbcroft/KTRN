@@ -1,7 +1,7 @@
 var config = {
     type: Phaser.AUTO,
-    width: visualViewport.width,
-    height: visualViewport.height,
+    width: screen.width,
+    height: screen.height,
     physics: {
         default: 'arcade',
         arcade: {
