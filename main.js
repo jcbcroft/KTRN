@@ -1,7 +1,7 @@
 var config = {
     type: Phaser.AUTO,
-    width: screen.width,
-    height: screen.height,
+    width: window.innerWidth * window.devicePixelRatio,
+    height: window.innerHeight * window.devicePixelRatio,
     physics: {
         default: 'arcade',
         arcade: {
@@ -22,12 +22,13 @@ var game = new Phaser.Game(config);
 function preload ()
 {
     this.load.image('cat', 'Assets/cat_6.png');
+    
 }
 
 function create ()
 {
-    player = this.physics.add.sprite(visualViewport.width/2, visualViewport.height/2, 'cat');
-
+    player = this.physics.add.sprite(window.innerWidth/2, window.innerHeight/2, 'cat');
+    
     player.body.isCircle = true;
     player.body.setCircle(10,0,10);
 
