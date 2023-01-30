@@ -21,7 +21,7 @@ var game = new Phaser.Game(config);
 
 function preload ()
 {
-    this.load.image('cat', './Assets/cat_6.png');
+    this.load.image('cat', 'Assets/cat_6.png');
 }
 
 function create ()
