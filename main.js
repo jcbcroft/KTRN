@@ -16,6 +16,7 @@ var config = {
 };
 
 var player;
+var water;
 
 var game = new Phaser.Game(config);
 
@@ -42,6 +43,12 @@ function create ()
         //Move at 200px/s:
         this.physics.moveToObject(player, this.target, 200);
     });
+
+    water = this.add.rectangle(600, 300, 800, 100, 0x0000f0, 1);
+    this.physics.add.existing(water);
+
+    this.physics.add.collider(player, water);
+    water.body.setImmovable();
 }
 
 function update ()
